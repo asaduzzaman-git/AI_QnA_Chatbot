@@ -8,7 +8,6 @@ from langchain_community.vectorstores import FAISS
 from langchain_core.prompts import PromptTemplate
 from langchain_community.llms import HuggingFaceHub
 
-## Uncomment the following files if you're not using pipenv as your virtual environment manager
 #from dotenv import load_dotenv, find_dotenv
 #load_dotenv(find_dotenv())
 
@@ -52,9 +51,9 @@ def main():
         st.session_state.messages.append({'role':'user', 'content': prompt})
 
         CUSTOM_PROMPT_TEMPLATE = """
-                Use the pieces of information provided in the context to answer user's question.
-                If you dont know the answer, just say that you dont know, dont try to make up an answer. 
-                Dont provide anything out of the given context
+                Use the pieces of information provided in the context to answer the user's question.
+                If you don't know the answer, just say that you don't know; don't try to make up an answer. 
+                Dont provide anything out of the given context below
 
                 Context: {context}
                 Question: {question}
